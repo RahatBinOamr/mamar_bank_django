@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="profile-image.jpg" alt="Profile Image" class="img-fluid rounded-circle">
+      </div>
+      <div class="col-md-8">
+        <h1>{{ request.user.username }}</h1>
+        <h4>account_no:{{ request.user.accounts.account_no }}</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur dolor sed lectus molestie, id tincidunt lectus semper. Proin euismod ante vel felis commodo, et fringilla lacus eleifend.</p>
+        <p>Email: {{ request.user.email }}</p>
+        <p>Location: {{ request.user.address.city }}, {{ request.user.address.country }}</p>
+        <a href="{% url 'update' %}">
+        <button class="btn btn-info">update profile</button>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+
+{% endblock  %}
